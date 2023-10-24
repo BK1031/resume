@@ -14,20 +14,13 @@ jobs:
             echo "$(printf '%s\n' *.tex)"
             echo EOF
           } >> $GITHUB_ENV
-          # echo "GITHUB_FILE_PATHS=$(echo "$(printf '%s\n' *.tex)")" >> $GITHUB_ENV
-      - name: Test
-        run: echo $GITHUB_FILE_PATHS
-      - name: Compile LaTeX document
+          echo $GITHUB_FILE_PATHS
+      - name: Compile LaTeX files
         uses: xu-cheng/latex-action@v3
         with:
           root_file: ${{env.GITHUB_FILE_PATHS}}
-      - name: Test Generated
-        run: |
-          echo $GITHUB_FILE_PATHS
-          echo "$(printf '%s\n' *.tex)"
-          echo "$(printf '%s\n' *.pdf)"
-      - name: Upload PDF file
+      - name: Upload PDF files
         uses: actions/upload-artifact@v3
         with:
-          name: PDF
-          path: main.pdf
+          name: Resumes
+          path: *.pdf
