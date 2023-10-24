@@ -1,9 +1,10 @@
-main.aux
-main.fdb_latexmk
-main.fls
-main.log
-main.out
-main.synctex.gz
+*.aux
+*.fdb_latexmk
+*.fls
+*.log
+*.out
+*.synctex.gz
+*.pdf
 
 # See https://help.github.com/articles/ignoring-files/ for more about ignoring files.
 
