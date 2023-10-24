@@ -8,7 +8,13 @@ jobs:
       - name: Set up Git repository
         uses: actions/checkout@v3
       - name: Identify LaTeX files
-        run: echo "GITHUB_FILE_PATHS=$(echo "$(printf '%s\n' *.tex)")" >> $GITHUB_ENV
+        run: |
+          {
+            echo 'GITHUB_FILE_PATHS<<EOF'
+            echo "$(printf '%s\n' *.tex)"
+            echo EOF
+          } >> $GITHUB_ENV
+          # echo "GITHUB_FILE_PATHS=$(echo "$(printf '%s\n' *.tex)")" >> $GITHUB_ENV
       - name: Test
         run: echo $GITHUB_FILE_PATHS
       - name: Compile LaTeX document
