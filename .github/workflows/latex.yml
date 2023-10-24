@@ -21,6 +21,11 @@ jobs:
         uses: xu-cheng/latex-action@v3
         with:
           root_file: ${{env.GITHUB_FILE_PATHS}}
+      - name: Test Generated
+        run: |
+          echo $GITHUB_FILE_PATHS
+          echo "$(printf '%s\n' *.tex)"
+          echo "$(printf '%s\n' *.pdf)"
       - name: Upload PDF file
         uses: actions/upload-artifact@v3
         with:
