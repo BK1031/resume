@@ -1,0 +1,162 @@
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% Developer CV
+%----------------------------------------------------------------------------------------
+%	PACKAGES AND OTHER DOCUMENT CONFIGURATIONS
+%----------------------------------------------------------------------------------------
+
+\documentclass[9pt]{developercv} % Default font size, values from 8-12pt are recommended
+\usepackage{multicol}
+\setlength{\columnsep}{0mm}
+%----------------------------------------------------------------------------------------
+\usepackage{lipsum}  
+
+
+\begin{document}
+
+%----------------------------------------------------------------------------------------
+%	TITLE AND CONTACT INFORMATION
+%----------------------------------------------------------------------------------------
+
+\begin{minipage}[t]{0.5\textwidth} 
+	\vspace{-\baselineskip} % Required for vertically aligning minipages
+	
+	{ \fontsize{16}{20} \textcolor{black}{\textbf{\MakeUppercase{Bharat Kathi}}}} % First name
+	
+	\vspace{6pt}
+    \icon{Envelope}{11}{\href{mailto:bkathi@ucsb.edu}{bkathi@ucsb.edu}}
+    \hspace{22pt}
+    \icon{Phone}{11}{510 945 9684}
+
+    \icon{Github}{11}{\href{https://github.com/bk1031}{github.com/bk1031}}
+    \hspace{12pt}
+    \icon{LinkedinSquare}{11}{\href{https://www.linkedin.com/in/bk1031/}{/in/bk1031}}
+    
+\end{minipage}
+\hfill
+\begin{minipage}[t]{0.5\textwidth}
+    \vspace{-18pt}
+    \cvsect{Skills}
+    \vspace{-6pt}
+    
+    \begin{minipage}[t]{0.2\textwidth}
+        \textbf{Languages:}
+    \end{minipage}
+    \hfill
+    \begin{minipage}[t]{0.73\textwidth}
+        C++, Dart, Golang, Java, NodeJS, Python, Swift
+    \end{minipage}
+    \vspace{4mm}
+    
+    \begin{minipage}[t]{0.2\textwidth}
+        \textbf{Technologies:}
+    \end{minipage}
+    \hfill
+    \begin{minipage}[t]{0.73\textwidth}
+        AWS, Azure, Docker, Firebase, GCP, Git, Kubernetes, PostgreSQL, SingleStore
+    \end{minipage}
+    
+\end{minipage}
+
+
+%----------------------------------------------------------------------------------------
+%	EDUCATION
+%----------------------------------------------------------------------------------------
+\vspace{-4 pt}
+\cvsect{Education}
+\begin{entrylist}
+    \entry
+		{Sep 2021 - June 2025}
+		{University of California, Santa Barbara}
+		{Santa Barbara, CA}
+		{B.S. Computer Engineering}
+\end{entrylist}
+
+%----------------------------------------------------------------------------------------
+%	EXPERIENCE
+%----------------------------------------------------------------------------------------
+\vspace{-14 pt}
+\cvsect{Experience}
+\begin{entrylist}
+    \entry
+		{}
+		{GauchoRacing (UCSB Formula SAE)}
+		{September 2022 – Present}
+		{\vspace{-10pt}
+        \begin{itemize}[noitemsep,topsep=0pt,parsep=0pt,partopsep=0pt, leftmargin=10pt]
+            \item Worked as a part of the Controls subteam to program the car's VCU (Vehicle Control Unit) using C++ and the Teensy microcontroller platform
+            \item Designed and impelemnted a Finite State Machine to handle all the car's requried modes of operations and error states
+            \item Led the development of the Data Aquisition Module (DAQ) which sends data from the car's 200+ sensors through an LTE module to a proccessing server deployed on AWS
+            \item Real-time telemetry is sent to a Pitlane Dashboard created using React and Typescript, which displays the car's current status and allows the pit crew to monitor the car's performance
+            \item Sensor data is routed to a SingleStore server where continous SQL queries are run to derive useful metrics and insights about the car's performance and send alerts if any anomolies are detected
+        \end{itemize}}
+	\entry
+        {}
+		{Axiamatic (Greylock-backed startup)}
+		{June 2023 – Sep 2023}
+		{\vspace{-10pt}
+        \begin{itemize}[noitemsep,topsep=0pt,parsep=0pt,partopsep=0pt, leftmargin=10pt]
+            \item Software Engineering Intern on the Platform team
+            \item Built out custom components using React and Typescript for Admin UI, an internal tool for engineers to manage and monitor the platform
+            \item Added new services to the Admin Gateway (the backend powering Admin UI) using Python and FastAPI, and deployed on AWS Fargate
+            \item Created a Service Registry Browser to visualize and provide easy access to information on the hundreds of services deployed on AWS, dependencies between services and on datastores were automatically generated nightly from AWS CDK config files
+            \item Created an On-call Log to track on-call events for each engineer and each team, tag and search through previous actions taken, and send slack workspaces notifications to relevant engineers/teams when an on-call event is triggered
+        \end{itemize}}
+	\entry
+		{}
+		{Pacific Esports League}
+		{June 2022 – Sep 2022}
+		{\vspace{-10pt}
+        \begin{itemize}[noitemsep,topsep=0pt,parsep=0pt,partopsep=0pt, leftmargin=10pt]
+            \item Software Engineering Intern on the Portal team
+            \item Built out the PEL Portal, a web app using Flutter for players to create teams, register for tournaments, and track their stats in the league
+            \item Created a custom CMS for admins to manage tournaments, teams, and players
+            \item Implemented a matchmaking system which automatically seeds teams, notifies players of upcoming matches, and allows them to submit match results
+            \item Setup CI/CD pipelines using GitHub actions to automatically deploy backend Go microservices to Azure Container Apps
+        \end{itemize}}
+\end{entrylist}
+
+%----------------------------------------------------------------------------------------
+%	Projects
+%----------------------------------------------------------------------------------------
+\vspace{-14 pt}
+\cvsect{Projects}
+\begin{entrylist}
+    \entry
+		{Technology}
+		{StorkeCentral • 1,500+ Users}
+		{storkecentral.app}
+		{
+            Created a platform for UCSB students to access important campus information, and scaled to over 1,000 monthly active users.
+            StorkeCentral provide easy access to dining hall menus, campus maps, bus schedules, and more.
+            Users can add their friends, share class schedule information, and receive notifications when friends are in class.
+            The web and mobile apps were built using Flutter, the backend consists of PostgreSQL and Go microservices deployed on a Kubernetes cluster.
+        }
+    \entry
+		{Technology}
+		{myDECA • 1st Place State, 3rd Place International DECA}
+		{github.com link}
+		{
+            Created a platform used by 7 schools across california, that improves communications among DECA chapters through built-in announcements, group chats, push notifications, as well as convenient access to resources including conference information, practice materials, and meeting details.
+            Web, iOS, and Android apps were built using Flutter, with Firebase for authentication and data storage, and Cloud Functions using NodeJS running the backend.
+        }
+	\entry
+		{Technology}
+		{Angel • 2nd Place, HackViolet}
+		{github.com link}
+		{
+            Mobile app that empowers women/non-binary individuals to anonymously or publicly tag specific locations of their experiences of sexual assault/harassment to help other women be prepared when they enter new areas.
+            Heatmaps based on user-submitted data are generated to show locations and times with high concentrations of harassment.
+            The app was built with Flutter, with Firebase used for authentication and data storage.
+        }
+    \entry
+		{Technology}
+		{CF Tracker • 1st Place, HealthHack II}
+		{github.com link}
+		{
+            Mobile app that CF patients can use to track daily treatments including nebulizer usage, meal and enzyme intake, and sends push notifications to remind users if they miss a dose.
+            Also collects stool and other data (inputted by the user) to a database and runs a model (Tensorflow/Keras Dense Layer Neural Network) to determine if a person should take more or less enzymes.
+            The app was built with Flutter, with Python, PostgreSQL, and Tensorflow on the backend.
+        }
+\end{entrylist}
+
+\end{document}
