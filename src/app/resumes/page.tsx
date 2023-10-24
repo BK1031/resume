@@ -32,7 +32,7 @@ export default function ResumesPage() {
             Resumes
           </h1>
           <p className="mt-6 text-lg leading-8 text-gray-400">
-            Here's a collection of all my resumes.
+            {`Here's a collection of all my resumes.`}
           </p>
         </div>
       </div>
