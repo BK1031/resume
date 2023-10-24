@@ -1,0 +1,22 @@
+name: Build LaTeX document
+on: [push]
+jobs:
+  build_latex:
+    runs-on: ubuntu-latest
+    name: Build LaTeX
+    steps:
+      - name: Set up Git repository
+        uses: actions/checkout@v3
+      - name: Identify LaTeX files
+        run: echo "GITHUB_FILE_PATHS=$(echo "$(printf '%s\n' *.tex)")" >> $GITHUB_ENV
+      - name: Test
+        run: echo $GITHUB_FILE_PATHS
+      - name: Compile LaTeX document
+        uses: xu-cheng/latex-action@v3
+        with:
+          root_file: ${{env.GITHUB_FILE_PATHS}}
+      - name: Upload PDF file
+        uses: actions/upload-artifact@v3
+        with:
+          name: PDF
+          path: main.pdf
