@@ -6,7 +6,7 @@ For example, my main resume would always be at https://resume.bk1031.dev/bharat_
 
 ## How it works
 
-Resumes are any `.tex` files in the root directory of the repository. When a commit lands on the main branch, the `Build and Deploy workflow` is run. This workflow consists of the following two jobs.
+Resumes are recognized as any `.tex` files in the root directory of the repository. When a commit lands on the main branch, the `Build and Deploy workflow` is run. This workflow consists of the following two jobs.
 
 ### `Build LaTeX`
 
