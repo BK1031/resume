@@ -15,9 +15,9 @@ export default function ResumesPage() {
         dateModified: stats.mtime.toISOString().split('T')[0],
       };
     }).sort((a, b) => {
-      if (a.fileName === 'main.pdf') {
+      if (a.fileName === 'bharat_kathi_main.pdf') {
         return -1;
-      } else if (b.fileName === 'main.pdf') {
+      } else if (b.fileName === 'bharat_kathi_main.pdf') {
         return 1;
       } else {
         return a.fileName.localeCompare(b.fileName);
