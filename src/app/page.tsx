@@ -2,14 +2,14 @@ import Image from 'next/image'
 
 export default function Home() {
   return (
-    <main className="flex min-h-screen flex-col items-center justify-between p-24">
+    <main className="flex min-h-screen flex-col items-center justify-between p-4 sm:p-24">
       <div className="mx-auto max-w-4xl py-32 sm:py-48 lg:py-56">
           <div className="text-center">
             <h1 className="text-4xl font-bold tracking-tight text-gray-100 sm:text-6xl">
               BK1031 Resume Bank
             </h1>
             <p className="mt-6 text-lg leading-8 text-gray-400">
-              A simple site that automatically compiles LaTeX resumes from my GitHub repository into PDFs and deploys them for easy access.
+              A static site that automatically compiles LaTeX resumes from my GitHub repository into PDFs and deploys them for easy access.
             </p>
             <div className="mt-10 flex items-center justify-center gap-x-6">
               <a
@@ -18,7 +18,7 @@ export default function Home() {
               >
                 View Resumes
               </a>
-              <a href="#" className="text-sm font-semibold leading-6 text-gray-100">
+              <a href="https://github.com/bk1031/resume" className="text-sm font-semibold leading-6 text-gray-100">
                 See how it works <span aria-hidden="true">→</span>
               </a>
             </div>

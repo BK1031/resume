@@ -25,7 +25,7 @@ export default function ResumesPage() {
     });
 
   return (
-    <main className="p-24">
+    <main className="p-4 sm:p-24">
       <div className="mx-auto max-w-4xl">
         <div className="text-start">
           <h1 className="text-4xl font-bold tracking-tight text-gray-100 sm:text-6xl">
