@@ -1,36 +1,17 @@
-This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
+# BK1031 Resume Bank
 
-## Getting Started
+This is a simple repository that automates building and deploying resumes, allowing them to be easily acessible from anywhere. The goal was to be able to have a single place where I would always have up-to-date resumes. Any changes can be made by commiting to this repository will automatically be propogated wherever the resume link is used.
 
-First, run the development server:
+For example, my main resume would always be at https://resume.bk1031.dev/bharat_kathi_main.pdf.
 
-```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
-```
+## How it works
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+Resumes are any `.tex` files in the root directory of the repository. When a commit lands on the main branch, the `Build and Deploy workflow` is run. This workflow consists of the following two jobs.
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+### `Build LaTeX`
 
-This project uses [`next/font`](https://nextjs.org/docs/basic-features/font-optimization) to automatically optimize and load Inter, a custom Google Font.
+This job finds all `.tex` files in the root directory and builds them into PDFs using [`xu-cheng/latex-action@v3`](https://github.com/xu-cheng/latex-action).
 
-## Learn More
+### `Deploy Resumes`
 
-To learn more about Next.js, take a look at the following resources:
-
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
-
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js/) - your feedback and contributions are welcome!
-
-## Deploy on Vercel
-
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
-
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/deployment) for more details.
+This job takes the compiles PDF's from the previous job and copies them into the `public/` folder. This allows them to be publically accessible from the NextJS site. Then it builds the NextJS project into a static site and deploys it on Vercel.
