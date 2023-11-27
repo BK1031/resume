@@ -45,14 +45,14 @@
     \begin{minipage}[t]{0.73\textwidth}
         C++, Dart, Golang, Java, NodeJS, Python, Swift
     \end{minipage}
-    \vspace{4mm}
+    \vspace{5 pt}
     
     \begin{minipage}[t]{0.2\textwidth}
         \textbf{Technologies:}
     \end{minipage}
     \hfill
     \begin{minipage}[t]{0.73\textwidth}
-        AWS, Azure, Docker, Firebase, GCP, Git, Kubernetes, PostgreSQL, SingleStore
+        AWS, Azure, Docker, Firebase, GCP, Git, Kafka, Kubernetes, PostgreSQL, RabbitMQ, SingleStore
     \end{minipage}
     
 \end{minipage}
@@ -104,10 +104,10 @@
 		{\vspace{-10pt}
         \begin{itemize}[noitemsep,topsep=0pt,parsep=0pt,partopsep=0pt, leftmargin=10pt]
             \item Worked as a part of the Controls subteam to program the car's VCU (Vehicle Control Unit) using C++ and the Teensy microcontroller platform
-            \item Designed and impelemnted a Finite State Machine to handle all the car's requried modes of operations and error states
-            \item Led the development of the Data Aquisition Module (DAQ) which sends data from the car's 200+ sensors through an LTE module to a proccessing server deployed on AWS
+            \item Designed and implemented a Finite State Machine to handle all the car's required modes of operations and error states
+            \item Led the development of Mapache, our data acquisition + analytics platform which sends data from the car's 200+ sensors through an LTE module using RabbitMQ to an ingest service deployed on AWS
             \item Real-time telemetry is sent to a Pitlane Dashboard created using React and Typescript, which displays the car's current status and allows the pit crew to monitor the car's performance
-            \item Sensor data is routed to a SingleStore server where continous SQL queries are run to derive useful metrics and insights about the car's performance and send alerts if any anomolies are detected
+            \item Sensor data is pipelined using Kafka to a SingleStore server where continuous SQL queries are run to derive useful metrics and insights about the car's performance and send alerts if any anomalies are detected
         \end{itemize}}
 	\entry
 		{}
