@@ -52,124 +52,142 @@
     \end{minipage}
     \hfill
     \begin{minipage}[t]{0.73\textwidth}
-        AWS, Azure, Docker, Firebase, GCP, Git, Kafka, Kubernetes, PostgreSQL, RabbitMQ, SingleStore
+        AWS, Azure, Docker, Firebase, GCP, Git, Kafka, Kubernetes, PostgreSQL, RabbitMQ, SingleStore, Snowflake
     \end{minipage}
     
 \end{minipage}
 
-
 %----------------------------------------------------------------------------------------
 %	EDUCATION
 %----------------------------------------------------------------------------------------
-\vspace{-6 pt}
 \cvsect{Education}
-\vspace{-4 pt}
 \begin{entrylist}
+    \vspace{-4pt}
     \entry
 		{}
 		{University of California, Santa Barbara}
 		{September 2021 – June 2025}
 		{B.S. Computer Engineering
-        \vspace{1pt}
         \begin{itemize}[noitemsep,topsep=0pt,parsep=0pt,partopsep=0pt, leftmargin=10pt]
-            \item Relevant Coursework: Circuits and Systems, Computer Architecture, Computer Vision, Data Structures \& Algorithms, Embedded Systems, Machine Learning, Operating Systems
+            \item Relevant Coursework: Circuits and Systems, Computer Architecture, Computer Vision, Data Structures \& Algorithms, Distributed Systems, Embedded Systems, Machine Learning, Operating Systems
         \end{itemize}}
 \end{entrylist}
+\vspace{-10pt}
 
 %----------------------------------------------------------------------------------------
 %	EXPERIENCE
 %----------------------------------------------------------------------------------------
-\vspace{-18 pt}
 \cvsect{Experience}
-\vspace{-4 pt}
 \begin{entrylist}
-    \vspace{-4 pt}
 	\entry
         {}
-		{Axiamatic (Greylock-backed startup)}
-		{June 2023 – September 2023}
-		{\vspace{-10pt}
+		{SingleStore • Software Engineering Intern}
+		{June 2024 – September 2024}
+		{\vspace{-8pt}
         \begin{itemize}[noitemsep,topsep=0pt,parsep=0pt,partopsep=0pt, leftmargin=10pt]
-            \item Software Engineering Intern on the Platform team
+            \item Worked on SingleStore's SPCS Native App (bringing the SingleStore HTAP engine into Snowflake's Snowpark Container Services)
+            \item Simplified the setup flow in by providing preset cluster configuration options to the user in the SPCS Streamlit application
+            \item Created a demo showcasing the SPCS integration to enable real-time data analytics on Snowflake's data warehouse
+            \item Mocked a ridesharing application that produced real-time rider/driver updates to a Kafka broker, ingesting the data into Snowflake + SingleStore in SPCS, and displayed analytics in a React dashboard, showcasing latency and query performance improvements
+            \item Presented the demo to prospective customers as well as at SingleStore's annual conference (SingleStore NOW)
+        \end{itemize}}
+    \entry
+        {}
+		{Axiamatic (Greylock-backed startup) • Software Engineering Intern}
+		{June 2023 – September 2023}
+		{\vspace{-8pt}
+        \begin{itemize}[noitemsep,topsep=0pt,parsep=0pt,partopsep=0pt, leftmargin=10pt]
             \item Built out custom components using React and Typescript for Admin UI, an internal tool for engineers to manage and monitor the platform
             \item Added new services to the Admin Gateway (the backend powering Admin UI) using Python and FastAPI, and deployed on AWS Fargate
             \item Created a Service Registry Browser to visualize and provide easy access to information on the hundreds of services deployed on AWS, dependencies between services and on datastores were automatically generated nightly from AWS CDK config files
             \item Created an On-call Log to track on-call events for each engineer and each team, tag and search through previous actions taken, and send slack workspaces notifications to relevant engineers/teams when an on-call event is triggered
         \end{itemize}}
-    \vspace{-4 pt}
     \entry
 		{}
-		{GauchoRacing (UCSB Formula SAE)}
-		{September 2022 – Present}
-		{\vspace{-10pt}
+		{Gaucho Racing (UCSB Formula SAE) • Data Lead}
+		{September 2021 – Present}
+		{\vspace{-8pt}
         \begin{itemize}[noitemsep,topsep=0pt,parsep=0pt,partopsep=0pt, leftmargin=10pt]
-            \item Worked as a part of the Controls subteam to program the car's VCU (Vehicle Control Unit) using C++ and the Teensy microcontroller platform
-            \item Designed and implemented a Finite State Machine to handle all the car's required modes of operations and error states
-            \item Led the development of Mapache, our data acquisition + analytics platform which sends data from the car's 200+ sensors through an LTE module using RabbitMQ to an ingest service deployed on AWS
-            \item Real-time telemetry is sent to a Pitlane Dashboard created using React and Typescript, which displays the car's current status and allows the pit crew to monitor the car's performance
-            \item Sensor data is pipelined using Kafka to a SingleStore server where continuous SQL queries are run to derive useful metrics and insights about the car's performance and send alerts if any anomalies are detected
+            \item Spearheaded the creation of the Data subteam, and the development of Mapache, a robust data aquisition and analytics system allowing real-time concurrent data analysis on multiple vehicles
+            \item Data from over 200 sensors are sent over CAN (Controller Area Network) to a Jetson Orin Nano, where edge ML models perform error/anomaly detection in real-time
+            \item These signals are all sent over MQTT to an ingest service deployed on AWS, where data is deserialized and stored in a SingleStore database
+            \item Queries are performed on SingleStore to analyze driver behavior, vehicle performance, and other metrics relevant to the team, helping find areas of improvement for the car's design
+            \item A dashboard created with React and Typescript allows the team to view data in real-time, as well as analyze performance across different vehicles, sessions, and laps
         \end{itemize}}
 	\entry
 		{}
-		{Pacific Esports League}
+		{Pacific Esports League • Software Engineering Intern}
 		{June 2022 – September 2022}
-		{\vspace{-10pt}
+		{\vspace{-8pt}
         \begin{itemize}[noitemsep,topsep=0pt,parsep=0pt,partopsep=0pt, leftmargin=10pt]
-            \item Software Engineering Intern on the Portal team
-            \item Built out the PEL Portal, a web app using Flutter for players to create teams, register for tournaments, and track their stats in the league
+            \item Worked on the the PEL Portal, a web app built with Flutter allowing players to create teams, register for tournaments, and track their stats in the league
             \item Created a custom CMS for admins to manage tournaments, teams, and players
             \item Implemented a matchmaking system which automatically seeds teams, notifies players of upcoming matches, and allows them to submit match results
             \item Setup CI/CD pipelines using GitHub actions to automatically deploy backend Go microservices to Azure Container Apps
         \end{itemize}}
 \end{entrylist}
+\vspace{-10pt}
 
 %----------------------------------------------------------------------------------------
 %	Projects
 %----------------------------------------------------------------------------------------
-\vspace{-18 pt}
 \cvsect{Projects}
-\vspace{-4 pt}
 \begin{entrylist}
-    \vspace{-4 pt}
     \entry
 		{Technology}
 		{StorkeCentral • 1,500+ Users}
 		{storkecentral.app}
-		{
-            Created a platform for UCSB students to access important campus information, and scaled to over 1,000 monthly active users.
-            StorkeCentral provide easy access to dining hall menus, campus maps, bus schedules, and more.
-            Users can add their friends, share class schedule information, and receive notifications when friends are in class.
-            The web and mobile apps were built using Flutter, the backend consists of PostgreSQL and Go microservices deployed on a Kubernetes cluster.
-        }
-    \vspace{-4 pt}
+        {\vspace{-8pt}
+        \begin{itemize}[noitemsep,topsep=0pt,parsep=0pt,partopsep=0pt, leftmargin=10pt]
+            \item Created a platform for UCSB students to access important campus information, and scaled to over 1,000 monthly active users
+            \item StorkeCentral provide easy access to dining hall menus, campus maps, bus schedules, and more
+            \item Users can add their friends, share class schedule information, and receive notifications when friends are in class
+            \item Flutter frontend, Go + PostgreSQL + Kubernetes backend
+        \end{itemize}}
+	\entry
+		{Technology}
+		{Sentinel}
+		{github.com/gaucho-racing/Sentinel}
+		{\vspace{-8pt}
+        \begin{itemize}[noitemsep,topsep=0pt,parsep=0pt,partopsep=0pt, leftmargin=10pt]
+            \item Created Sentinel, a central authentication service for Gaucho Racing (UCSB's Formula SAE team)
+            \item Keeps track of an active member directory, interfacing with our Discord server to sync subteams and roles
+            \item Implemented the OAuth 2.0 and OpenID Connect protocols to allow internal tools to authenticate members
+            \item Automated onboarding/offboarding processes for the team, including managing permissions for Google Drive, GitHub, and even SOLIDWORKS CAD Licenses.
+            \item React + Typescript frontend, Go + SingleStore backend
+        \end{itemize}}
+    \entry
+		{Technology}
+		{Jiffy}
+		{github.com/gaucho-racing/Jiffy}
+		{\vspace{-8pt}
+        \begin{itemize}[noitemsep,topsep=0pt,parsep=0pt,partopsep=0pt, leftmargin=10pt]
+            \item Created Jiffy, a purchase request system for Gaucho Racing (UCSB's Formula SAE team)
+            \item Members can submit purchase requests for parts needed the car, which go through a 2 step approval process with the subteam's lead and the treasurer
+            \item Order statuses are automatically updated from vendors in the system, and notifications are sent to members as requests are processed including shipping updates
+            \item The treasurer can view a summary of all purchase requests and approve them from a centralized dashboard
+            \item Time-bound budgets for each subteam can be set by the treasurer, enabling better financial management of the team as well as more transparency into spending over time for all members
+            \item React + Typescript frontend, Go + SingleStore backend
+        \end{itemize}}
     \entry
 		{Technology}
 		{myDECA • 1st Place State, 3rd Place International DECA}
 		{github.com/bk1031/myDECA-web}
-		{
-            Created a platform used by 7 schools across california, that improves communications among DECA chapters through built-in announcements, group chats, push notifications, as well as convenient access to resources including conference information, practice materials, and meeting details.
-            Web, iOS, and Android apps were built using Flutter, with Firebase for authentication and data storage, and Cloud Functions using NodeJS running the backend.
-        }
-    \vspace{-4 pt}
-	\entry
-		{Technology}
-		{Angel • 2nd Place, HackViolet}
-		{github.com/bk1031/AngelApp}
-		{
-            Mobile app that empowers women/non-binary individuals to anonymously or publicly tag specific locations of their experiences of sexual assault/harassment to help other women be prepared when they enter new areas.
-            Heatmaps based on user-submitted data are generated to show locations and times with high concentrations of harassment.
-            The app was built with Flutter, with Firebase used for authentication and data storage.
-        }
-    \vspace{-4 pt}
+        {\vspace{-8pt}
+        \begin{itemize}[noitemsep,topsep=0pt,parsep=0pt,partopsep=0pt, leftmargin=10pt]
+            \item Created a platform used by 7 schools across california, that improves communications among DECA chapters through built-in announcements, group chats, push notifications, as well as convenient access to resources including conference information, practice materials, and meeting details
+            \item Flutter frontend, NodeJS + Cloud Functions + Firebase backend
+        \end{itemize}}
     \entry
 		{Technology}
 		{CF Tracker • 1st Place, HealthHack II}
 		{github.com/bk1031/CF-Tracker}
-		{
-            Mobile app that CF patients can use to track daily treatments including nebulizer usage, meal and enzyme intake, and sends push notifications to remind users if they miss a dose.
-            Also collects stool and other data (inputted by the user) to a database and runs a model (Tensorflow/Keras Dense Layer Neural Network) to determine if a person should take more or less enzymes.
-            The app was built with Flutter, with Python, PostgreSQL, and Tensorflow on the backend.
-        }
+        {\vspace{-8pt}
+        \begin{itemize}[noitemsep,topsep=0pt,parsep=0pt,partopsep=0pt, leftmargin=10pt]
+            \item Created a mobile app that CF patients can use to track daily treatments including nebulizer usage, meal and enzyme intake, and sends push notifications to remind users if they miss a dose
+            \item Also collects stool and other data (inputted by the user) to a database and runs a model (Tensorflow/Keras Dense Layer Neural Network) to determine if a person should take more or less enzymes
+            \item Flutter frontend, Python + PostgreSQL + Tensorflow backend
+        \end{itemize}}
 \end{entrylist}
 
 \end{document}
